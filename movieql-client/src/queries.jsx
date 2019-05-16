@@ -30,6 +30,8 @@ export const MOVIE_DETAILS = gql`
   }
 `;
 
+
+
 /**
  * 
  * graphql-tag를 통해 frontend에서 graphql query 작성

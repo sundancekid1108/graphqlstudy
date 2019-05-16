@@ -14,7 +14,7 @@ class App extends Component {
           <Router>
             <main>
               <Route exact={true} path={"/"} component={Home} />
-              <Route path={"/details/:movieId"} component={Detail} />
+              <Route path={"/details/:parseInt(movieId)"} component={Detail} />
             </main>
           </Router>
         </ApolloHooksProvider>
@@ -24,3 +24,5 @@ class App extends Component {
 }
 
 export default App;
+
+//Movie ID 관련 에러

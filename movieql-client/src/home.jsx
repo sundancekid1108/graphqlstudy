@@ -15,6 +15,7 @@ const Container = styled.div`
 
 const Home = () => {
   const { data, error, loading } = useQuery(HOME_PAGE);
+  console.log("Home")
   return (
     <Container>
       <Helmet>

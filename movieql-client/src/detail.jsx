@@ -46,9 +46,10 @@ const Detail = ({
   }
 }) => {
   const { loading, error, data } = useQuery(MOVIE_DETAILS, {
-    variables: (Number(movieId))
+    variables: {movieId}
   });
-  if (loading)
+  if (loading){
+    console.log("loading");
     return (
       <React.Fragment>
         <Helmet>
@@ -57,38 +58,44 @@ const Detail = ({
         loading
       </React.Fragment>
     );
+  }
+    
   if (error) {
     console.log(movieId);
     console.log(typeof movieId);
     return "error";
+  } else {
+    console.log("working great");
+    return (
+      <React.Fragment>
+        <Container>
+          <Helmet>
+            <title>{data.movie.title} | MovieQL</title>
+          </Helmet>
+          <Image src={data.movie.medium_cover_image} />
+          <span>
+            <Title>{data.movie.title}</Title>
+            <Paragraph bold>Rating: {data.movie.rating}</Paragraph>
+            <Paragraph>{data.movie.description_intro}</Paragraph>
+          </span>
+        </Container>
+        <Title>Suggested</Title>
+        <MovieContainer>
+          {data.suggestions.map(movie => (
+            <Movie
+              key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              rating={movie.rating}
+              poster={movie.medium_cover_image}
+            />
+          ))}
+        </MovieContainer>
+      </React.Fragment>
+    );
   }
-  return (
-    <React.Fragment>
-      <Container>
-        <Helmet>
-          <title>{data.movie.title} | MovieQL</title>
-        </Helmet>
-        <Image src={data.movie.medium_cover_image} />
-        <span>
-          <Title>{data.movie.title}</Title>
-          <Paragraph bold>Rating: {data.movie.rating}</Paragraph>
-          <Paragraph>{data.movie.description_intro}</Paragraph>
-        </span>
-      </Container>
-      <Title>Suggested</Title>
-      <MovieContainer>
-        {data.suggestions.map(movie => (
-          <Movie
-            key={movie.id}
-            id={movie.id}
-            title={movie.title}
-            rating={movie.rating}
-            poster={movie.medium_cover_image}
-          />
-        ))}
-      </MovieContainer>
-    </React.Fragment>
-  );
+  
+  
 };
 
 export default Detail;
