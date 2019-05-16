@@ -1,5 +1,7 @@
+//playground에서 체크 가능
+
 import { GraphQLServer } from "graphql-yoga";
-import resolvers from "./graphql/resolvers"
+import resolvers from "./graphql/resolvers";
 
 
 const server = new GraphQLServer({
