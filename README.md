@@ -15,3 +15,9 @@ GraphQL을 통해 REST API 사용
 Axios => 비동기 방식으로 HTTP request 실행
 
 https://www.youtube.com/watch?v=EGFxCvefehc&list=PL7jH19IHhOLOpU_yAYzCO4iQNvdou1AnK&index=13
+
+#movieql-server 
+해당부분에서 data 처리
+
+#movieql-client
+화면 출력
