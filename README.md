@@ -19,5 +19,6 @@ https://www.youtube.com/watch?v=EGFxCvefehc&list=PL7jH19IHhOLOpU_yAYzCO4iQNvdou1
 #movieql-server 
 해당부분에서 data 처리
 
+
 #movieql-client
 화면 출력
